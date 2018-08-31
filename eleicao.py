@@ -1,3 +1,4 @@
+import csv
 from io import open
 
 total_cadeiras = 29
@@ -10,13 +11,18 @@ class politico:
 	self.part_colig = par_col
 	self.votos = vot
 
-dados = []
+def quociente_partidario(valor):
+	for i in valor:
+		print valor.num
+	
 
-with open("eleicao.csv", encoding="utf-8") as f:
-	f.readline()
-	for line in f:
-        	print(line.decode)
-		dados.append(line)
+
+
+with open('eleicao.csv') as csvfile:
+    readCSV = csv.reader(csvfile, delimiter=';')
+    dados = []
+    for row in readCSV:
+        print row
 	f.close()
 
 
